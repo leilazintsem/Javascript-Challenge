@@ -8,13 +8,13 @@ const tableData = data;
 // get table references where table will be inserted
 var tbody = d3.select("tbody");
 
-// // Console.log the weather data from data.js
-// console.log(data);
+// Console.log the weather data from data.js
+console.log(data);
 
-// // Step 1: Loop Through `data` and console.log each weather report object
-// data.forEach(function(ufo) {
-//   console.log(ufo);
-// });
+// Step 1: Loop Through `data` and grab each object
+data.forEach(function(ufo) {
+  console.log(ufo);
+});
 
 // // Step 2:  Use d3 to append one table row `tr` for each UFO  object
 // data.forEach(function(ufo) {
