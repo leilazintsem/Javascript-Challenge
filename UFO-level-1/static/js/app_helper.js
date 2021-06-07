@@ -1,7 +1,3 @@
-//starter file from TA - Erin Wills
-// provided comments for basic version of HW
-// included function names and filteredData variable
-
 // from data.js
 const tableData = data;
 
@@ -24,37 +20,41 @@ data.forEach(function(ufo) {
 
 
 // Use `Object.entries` to grab each value
+data.forEach(function(ufo) {
+   console.log(ufo);
+     var row = tbody.append("tr");
   Object.entries(ufo).forEach(function([key, value]) {
     console.log(key, value);
   });
 });
 
-// Step 4: Use d3 to append 1
+// Use d3 to append 1
 data.forEach(function(ufo) {
   console.log(ufo);
   var row = tbody.append("tr");
 
   Object.entries(ufo).forEach(function([key, value]) {
     console.log(key, value);
+
     // Append a cell to the row for each value
-    // in the weather report object
+    // in the data object
     var cell = row.append("td");
   });
 });
 
-// // Step 5: Use d3 to update each cell's text with
-// // weather report values (weekday, date, high, low)
-// data.forEach(function(ufo) {
-//   console.log(ufo);
-//   var row = tbody.append("tr");
-//   Object.entries(ufo).forEach(function([key, value]) {
-//     console.log(key, value);
-//     // Append a cell to the row for each value
-//     // in the weather report object
-//     var cell = row.append("td");
-//     cell.text(value);
-//   });
-// });
+//  Use d3 to update each cell's text with
+// values
+data.forEach(function(ufo) {
+  console.log(ufo);
+  var row = tbody.append("tr");
+  Object.entries(ufo).forEach(function([key, value]) {
+    console.log(key, value);
+    // Append a cell to the row for each value
+    // in the weather report object
+    var cell = row.append("td");
+    cell.text(value);
+  });
+});
 
 
 function buildTable(data) {
