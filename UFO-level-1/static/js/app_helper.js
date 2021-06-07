@@ -11,22 +11,19 @@ var tbody = d3.select("tbody");
 // Console.log the weather data from data.js
 console.log(data);
 
-// Step 1: Loop Through `data` and grab each object
+// Loop Through `data` and grab each object
 data.forEach(function(ufo) {
   console.log(ufo);
 });
 
-// // Step 2:  Use d3 to append one table row `tr` for each UFO  object
-// data.forEach(function(ufo) {
-//             console.log(ufo);
-//             var row = tbody.append("tr");
-// });
+// Use d3 to append one table row `tr` for each UFO  object
+data.forEach(function(ufo) {
+            console.log(ufo);
+            var row = tbody.append("tr");
+});
+
 
 // // Step 3:  Use `Object.entries` to grab each value
-// data.forEach(function(ufo) {
-//   console.log(ufo);
-//   var row = tbody.append("tr");
-
 //   Object.entries(ufo).forEach(function([key, value]) {
 //     console.log(key, value);
 //   });
