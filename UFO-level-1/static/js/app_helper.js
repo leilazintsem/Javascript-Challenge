@@ -1,46 +1,47 @@
 // from data.js
 const tableData = data;
 
+function buildTable(data) {
 // get table references where table will be inserted
 var tbody = d3.select("tbody");
 
 // Console.log the weather data from data.js
 console.log(data);
 
-// Loop Through `data` and grab each object
-data.forEach(function(ufo) {
-  console.log(ufo);
-});
+// // Loop Through `data` and grab each object
+// data.forEach(function(ufo) {
+//   console.log(ufo);
+// });
 
-// Use d3 to append one table row `tr` for each UFO  object
-data.forEach(function(ufo) {
-            console.log(ufo);
-            var row = tbody.append("tr");
-});
+// // Use d3 to append one table row `tr` for each UFO  object
+// data.forEach(function(ufo) {
+//             console.log(ufo);
+//             var row = tbody.append("tr");
+// });
 
 
-// Use `Object.entries` to grab each value
-data.forEach(function(ufo) {
-   console.log(ufo);
-     var row = tbody.append("tr");
-  Object.entries(ufo).forEach(function([key, value]) {
-    console.log(key, value);
-  });
-});
+// // Use `Object.entries` to grab each value
+// data.forEach(function(ufo) {
+//    console.log(ufo);
+//      var row = tbody.append("tr");
+//   Object.entries(ufo).forEach(function([key, value]) {
+//     console.log(key, value);
+//   });
+// });
 
-// Use d3 to append 1
-data.forEach(function(ufo) {
-  console.log(ufo);
-  var row = tbody.append("tr");
+// // Use d3 to append 1
+// data.forEach(function(ufo) {
+//   console.log(ufo);
+//   var row = tbody.append("tr");
 
-  Object.entries(ufo).forEach(function([key, value]) {
-    console.log(key, value);
+//   Object.entries(ufo).forEach(function([key, value]) {
+//     console.log(key, value);
 
-    // Append a cell to the row for each value
-    // in the data object
-    var cell = row.append("td");
-  });
-});
+//     // Append a cell to the row for each value
+//     // in the data object
+//     var cell = row.append("td");
+//   });
+// });
 
 //  Use d3 to update each cell's text with
 // values
@@ -55,28 +56,22 @@ data.forEach(function(ufo) {
     cell.text(value);
   });
 });
+};
 
+// clear the table for new data
+function deleteTbody() {
+  d3.select("tbody")
+    .selectAll("tr").remove()
+    .selectAll("td").remove();
+};
 
-function buildTable(data) {
-  // When the page loads, it needs to display the table
-  // But if the table reloads then you may need to ensure the 
-  // previous output is cleared/overwritten from scratch 
-
-  // Think of the class activities for generating tables
-
-}
-
+  
 function handleClick() {
-
-  // Grab the datetime value from the filter
-  
-
-  // grab all the table data and set to filteredData
-  
-  // Check to see if a date was entered and filter the
-  // data using that date.
-
-
+  button.on("click", () => {
+    d3.event.preventDefault();
+    var inputDate = inputField1.property("value").trim();  
+    var filterDate = data.filter(data => data.datetime === inputDate);
+    console.log(filterDate)
   
 
   
